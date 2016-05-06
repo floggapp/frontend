@@ -11,9 +11,6 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-
-        </li>
         <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Mete Kabak <span class="caret"></span>
@@ -32,16 +29,24 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-        <h4 class="header">Favorites</h4>
-        <li class="active">
-          <a href="#">Mete Kabak <span class="pull-right badge">1</span></a>
+        <h4 class="header">#followings</h4>
+        {{#each model as |blog|}}
+        <li>
+          {{#link-to 'blogs.blog' blog }}
+            {{ blog.name }} <span class="pull-right badge">{{ blog.unreaded }}</span>
+          {{/link-to}}
         </li>
-        <li><a href="#">Mert Kasar <span class="pull-right badge">3</span> </a></li>
+        {{/each}}
       </ul>
       <ul class="nav nav-sidebar">
-        <h4 class="header">Recently</h4>
-        <li><a href="#">Mert Kasar <span class="pull-right badge">3</span> </a></li>
-        <li><a href="#">Mert Kasar <span class="pull-right badge">3</span> </a></li>
+        <h4 class="header">#popular</h4>
+        {{#each model as |blog|}}
+        <li>
+          {{#link-to 'blogs.blog' blog }}
+            {{ blog.name }} <span class="pull-right badge">{{ blog.unreaded }}</span>
+          {{/link-to}}
+        </li>
+        {{/each}}
       </ul>
     </div>
 
