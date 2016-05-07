@@ -1,8 +1,11 @@
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss"
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables"
 @import "bootswatch-sass/flatly/variables"
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap"
 @import "bootswatch-sass/flatly/bootswatch"
+@import "font-awesome/scss/font-awesome.scss"
 
+@import "variables"
+@import "index"
 
 /*
  * Base structure
@@ -60,10 +63,10 @@ body
       padding-left: 20px
     .active > a
       color: #fff
-      background-color: #18bc9c
+      background-color: $success
       &:hover, &:focus
         color: #fff
-        background-color: #18bc9c
+        background-color: $success
     .header
       margin-left: 10px
 
@@ -94,3 +97,18 @@ body
   img
     display: inline-block
     border-radius: 50%
+
+
+.people
+  .image
+    width: 48px
+    padding-bottom: 5px
+    padding-right: 5px
+    img
+      width: 48px
+
+  .follow
+    vertical-align: top
+
+  .name
+    vertical-align: bottom
