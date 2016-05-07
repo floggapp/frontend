@@ -1,29 +1,38 @@
+{{#each model as |post|}}
+
 <div class="post">
   <div class="panel panel-default">
     <div class="panel-body">
       <table class="table">
         <tr>
           <td class="image" rowspan="2">
-            <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img img-circle" alt="Mete Kabak">
+            <img src="{{ post.blog.image }}" class="img img-circle" alt="{{ post.blog.name }}">
           </td>
-          <td class="name">Mete Kabak</td>
+          <td class="name">{{ post.blog.name }}</td>
           <td class="save" rowspan="2">
+            {{#if post.favorited }}
+              <i class="fa fa-star" aria-hidden="true"></i>
+            {{else}}
               <i class="fa fa-star-o" aria-hidden="true"></i>
+            {{/if}}
           </td>
         </tr>
         <tr>
-          <td class="title">Full-Stack Developer</td>
+          <td class="title">{{ post.blog.title }}</td>
         </tr>
 
       </table>
       <h3>
-        Before we start, rails with angularjs <small class="new">New</small>
+        {{ post.header }}
+        {{#if post.new}} <small class="new">New</small> {{/if}}
       </h3>
       <p>
-        This is going to be blog series, We are going to make an application for home. We will cover these topics accordingly using rails,
-        <a target="_blank" href="http://metekabak.me/blog/rails-angular/before-we-start-angularjs-with-rails/">continue reading..</a>
+        {{ post.summary }}
+        <a target="_blank" href="{{ post.link }}">continue reading..</a>
       </p>
 
     </div>
   </div>
 </div>
+
+{{/each}}
