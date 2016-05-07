@@ -4,10 +4,10 @@ export default Ember.Route.extend({
 
   model(params) {
       const id = params.id;
-      const blog = this.get('blog');
-      return blog.find(id);
+      const following = this.get('following');
+      return following.find(id);
     },
 
-    blog: Ember.inject.service()
+    following: Ember.inject.service()
 
 });

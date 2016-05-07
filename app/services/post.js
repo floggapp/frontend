@@ -42,6 +42,19 @@ export default Ember.Service.extend({
         new: false,
         header: 'Before we start, rails with angularjs',
         summary: 'This is going to be blog series, We are going to make an application for home. We will cover these topics accordingly using rails,'
+      }, {
+        id: 4,
+        blog_id: 2,
+        blog: {
+          name: 'Mert Kasar',
+          title: 'Game Developer',
+          image: 'https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg'
+        },
+        favorited: true,
+        link: 'http://metekabak.me/blog/rails-angular/before-we-start-angularjs-with-rails/',
+        new: false,
+        header: 'Before we start, rails with angularjs',
+        summary: 'This is going to be blog series, We are going to make an application for home. We will cover these topics accordingly using rails,'
       }];
     },
 

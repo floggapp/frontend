@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li>{{#link-to 'favorites'}} Favorites {{/link-to}} </li>
+        <li>{{#link-to 'bookmarks'}} Bookmarks {{/link-to}} </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Mete Kabak <span class="caret"></span>
@@ -31,7 +31,7 @@
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
       <ul class="nav nav-sidebar">
         <h4 class="header">#followings</h4>
-        {{#each model as |blog|}}
+        {{#each model.followings as |blog|}}
         <li>
           {{#link-to 'blogs.blog' blog }}
           {{ blog.name }} <span class="pull-right badge">{{ blog.unreaded }}</span>
@@ -46,15 +46,15 @@
         <div class="col-lg-8 col-md-9 col-sm-12">
           {{outlet}}
         </div>
-        <div class="col-lg-4 col-md-3 hidden-xs">
-          <h4 class="header">#people to follow</h4>
+        <div class="col-lg-4 col-md-3 hidden-xs pull-right">
+          <h4 class="header">#blogs to follow</h4>
           <table class="table people">
-            {{#each model as |blog|}}
+            {{#each model.blogs as |person|}}
             <tr>
               <td class="image" rowspan="2">
-                <img src="{{ blog.image }}" alt="">
+                <img src="{{ person.image }}" alt="">
               </td>
-              <td class="name">{{ blog.name }}</td>
+              <td class="name">{{ person.name }}</td>
             </tr>
             <tr>
               <td class="follow"><button class="btn btn-xs btn-success">follow</button> </td>

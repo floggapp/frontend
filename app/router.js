@@ -12,7 +12,7 @@ Router.map(function() {
       path: '/:id'
     });
   });
-  this.route('favorites');
+  this.route('bookmarks');
 });
 
 export default Router;
