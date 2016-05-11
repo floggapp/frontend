@@ -43,28 +43,39 @@
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="row">
-        <div class="col-lg-8 col-md-9 col-sm-12">
+        <div class="col-lg-9 col-md-10 col-sm-12">
           {{outlet}}
         </div>
-        <div class="col-lg-4 col-md-3 hidden-xs pull-right">
-          <h4 class="header">#blogs to follow</h4>
-          <table class="table people">
-            {{#each model.blogs as |person|}}
-            <tr>
-              <td class="image" rowspan="2">
-                <img src="{{ person.image }}" alt="">
-              </td>
-              <td class="name">{{ person.name }}</td>
-            </tr>
-            <tr>
-              <td class="follow"><button class="btn btn-xs btn-success">follow</button> </td>
-            </tr>
-            {{/each}}
-          </table>
+        <div class="col-lg-3 col-md-2 hidden-xs pull-right">
+          <h4 class="header">#blogs you might like</h4>
+          {{#each model.blogs as |person|}}
+          <div class="people">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+                  <td class="image" rowspan="2">
+                    <img src="{{ person.image }}" alt="">
+                  </td>
+                  <td class="name"><a target="_blank" href="http://{{ person.link }}">{{ person.name }}</a></td>
+                  <td rowspan="2" class="close">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <td class="name">
+                      <button class="btn btn-xs btn-success">follow</button>
+                    </td>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          </div>
+          {{/each}}
         </div>
       </div>
-
     </div>
-
   </div>
 </div>

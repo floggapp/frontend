@@ -61,6 +61,11 @@ export default Ember.Service.extend({
     find(id) {
       const posts = this.all();
       return posts.findBy('id', id);
+    },
+
+    bookmarkeds() {
+      const posts = this.all();
+      return posts;
     }
 
 
