@@ -34,7 +34,7 @@
         {{#each model.followings as |blog|}}
         <li>
           {{#link-to 'blogs.blog' blog }}
-          {{ blog.name }} <span class="pull-right badge">{{ blog.unreaded }}</span>
+          {{ blog.blogger }} <span class="pull-right badge">{{ blog.unreaded }}</span>
           {{/link-to}}
         </li>
         {{/each}}
@@ -57,7 +57,7 @@
                   <td class="image" rowspan="2">
                     <img src="{{ person.image }}" alt="">
                   </td>
-                  <td class="name"><a target="_blank" href="http://{{ person.link }}">{{ person.name }}</a></td>
+                  <td class="name"><a target="_blank" href="http://{{ person.link }}">{{ person.blogger }}</a></td>
                   <td rowspan="2" class="close">
                     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   </td>

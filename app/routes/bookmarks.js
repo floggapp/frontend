@@ -3,11 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-      const posts = this.get('post');
-      return posts.bookmarkeds();
+      return this.get('store').getBookmarkeds();
     },
 
-    post: Ember.inject.service()
+    store: Ember.inject.service()
 
 
 

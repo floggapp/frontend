@@ -3,17 +3,12 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-      const followings = this.get('following');
-      const blogs = this.get('blog');
-
       return {
-        blogs: blogs.all(),
-        followings: followings.all()
+        blogs: this.get('store').getBlogs(),
+        followings: this.get('store').getFollowings()
       };
-
     },
 
-    following: Ember.inject.service(),
-    blog: Ember.inject.service()
+    store: Ember.inject.service(),
 
 });
